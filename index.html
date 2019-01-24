@@ -12,9 +12,29 @@
   <div class="container">
     <h1>Add Book</h1>
     <form id="book-form">
-      <label for="Title">Title</label>
+      <label for="title">Title</label>
       <input type="text" id="title" class="u-full-width">
     </form>
+    <form id="book-form">
+      <label for="author">Author</label>
+      <input type="text" id="author" class="u-full-width">
+    </form>
+    <form id="book-form">
+      <label for="isbn">ISBN#</label>
+      <input type="text" id="isbn" class="u-full-width">
+    </form>
+    <hr>
+    <table class="u-full-width">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="book-list"></tbody>
+    </table>
   </div>
 </body>
 </html>
