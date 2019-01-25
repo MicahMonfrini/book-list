@@ -11,7 +11,7 @@ function Book(title, author, isbn) {
 // UI
 function UI() {}
 
-// add book to list
+// add book to list prototype
 UI.prototype.addBookToList = function(book) {
   // book list variable
   const list = document.getElementById('book-list');
@@ -27,6 +27,13 @@ UI.prototype.addBookToList = function(book) {
 
   // append to list
   list.appendChild(row);
+}
+
+// clear prototype
+UI.prototype.clearFields = () => {
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
+  document.getElementById('isbn').value = '';
 }
 
 // EVENT LISTENERS
@@ -45,6 +52,9 @@ document.getElementById('book-form').addEventListener('submit', (e) => {
   // add book to list
 
   ui.addBookToList(book);
+
+  // clear fields
+  ui.clearFields();
 
   e.preventDefault();
 })
