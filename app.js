@@ -11,6 +11,11 @@ function Book(title, author, isbn) {
 // UI
 function UI() {}
 
+// add book to list
+UI.prototype.addBookToList = function(book) {
+
+}
+
 // EVENT LISTENERS
 document.getElementById('book-form').addEventListener('submit', (e) => {
   // form values
@@ -22,7 +27,11 @@ document.getElementById('book-form').addEventListener('submit', (e) => {
   const book = new Book(title, author, isbn);
 
   // instantiate ui object
-  const UI = new UI()
+  const ui = new UI()
+
+  // add book to list
+
+  ui.addBookToList(book);
 
   e.preventDefault();
 })
