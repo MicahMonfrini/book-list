@@ -24,6 +24,9 @@ UI.prototype.addBookToList = function(book) {
     <td>${book.isbn}</td>
     <td><a href="#" class="delete>X</td>
   `
+
+  // append to list
+  list.appendChild(row);
 }
 
 // EVENT LISTENERS
