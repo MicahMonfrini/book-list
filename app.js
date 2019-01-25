@@ -13,10 +13,13 @@ function UI() {}
 
 // EVENT LISTENERS
 document.getElementById('book-form').addEventListener('submit', (e) => {
+  // form values
   const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
   const isbn = document.getElementById('isbn').value;
-  console.log(title, author, isbn)
-  
+
+  // instantiate book
+  const book = new Book(title, author, isbn);
+
   e.preventDefault();
 })
