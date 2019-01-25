@@ -18,8 +18,11 @@ document.getElementById('book-form').addEventListener('submit', (e) => {
   const author = document.getElementById('author').value;
   const isbn = document.getElementById('isbn').value;
 
-  // instantiate book
+  // instantiate book object
   const book = new Book(title, author, isbn);
+
+  // instantiate ui object
+  const UI = new UI()
 
   e.preventDefault();
 })
