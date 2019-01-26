@@ -99,6 +99,8 @@ document.getElementById('book-form').addEventListener('submit', (e) => {
   } else {
     // add book to list
     ui.addBookToList(book);
+    // add to LS
+    Store.addBook(book);
     // show success message
     ui.showAlert('Book added!', 'success')
     // clear fields
