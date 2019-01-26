@@ -91,14 +91,23 @@ class Store {
     const books = Store.getBooks();
     // add new book to array
     books.push(book);
-    // update LS with new book
+    // update LS
     localStorage.setItem('books', JSON.stringify(books));
   }
 
-  static removeBook() {
-
+  static removeBook(isbn) {
+    // retrieve any books that may be stored
+    const books = Store.getBooks();
+    // loop over books array
+    books.forEach((book, index) => {
+      // if isbn matches target, remove it
+      if(book.isbn === isbn) {
+        books.splice(index, 1);
+      }
+    });
+    // update LS
+    localStorage.setItem('books', JSON.stringify(books));
   }
-
 }
 
 // EVENT LISTENERS
@@ -149,6 +158,8 @@ document.getElementById('book-list').addEventListener('click', (e) => {
   const ui = new UI()
   // delete row that is targeted
   ui.deleteBook(e.target);
+  // remove from LS (by targeting the ISBN number)
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
   // show alert message
   ui.showAlert('Book removed!', 'success')
 
