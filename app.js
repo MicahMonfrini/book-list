@@ -37,6 +37,17 @@ UI.prototype.showAlert = (message, className) => {
   div.className = `alert ${className}`;
   // add text
   div.appendChild(document.createTextNode(message));
+  // get parent
+  const container = document.querySelector('.container');
+  // get form
+  const form = document.querySelector('#book-form');
+  // insert alert
+  container.insertBefore(div, form);
+
+  // timeout after 3 sec
+  setTimeout(() => {
+    document.querySelector('.alert').remove();
+  }, 3000)
 }
 
 // clear prototype
@@ -62,7 +73,7 @@ document.getElementById('book-form').addEventListener('submit', (e) => {
   // form validation
   if(title === '' || author === '' || isbn === '') {
     // show error if any fields are blank
-    UI.showAlert('Please fill in all fields.', 'error');
+    ui.showAlert('Please fill in all fields.', 'error');
   } else {
     // add book to list
     ui.addBookToList(book);
