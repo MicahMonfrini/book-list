@@ -77,13 +77,11 @@ document.getElementById('book-form').addEventListener('submit', (e) => {
   } else {
     // add book to list
     ui.addBookToList(book);
+    // show success message
+    ui.showAlert('Book added!', 'success')
     // clear fields
     ui.clearFields();
   }
-
-  // add book to list
-
-  ui.addBookToList(book);
 
   // clear fields
   ui.clearFields();
