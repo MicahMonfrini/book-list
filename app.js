@@ -29,7 +29,7 @@ UI.prototype.addBookToList = function(book) {
   list.appendChild(row);
 }
 
-// validation error alert
+// validation error prototype
 UI.prototype.showAlert = (message, className) => {
   // create div
   const div = document.createElement('div');
@@ -58,6 +58,9 @@ UI.prototype.clearFields = () => {
 }
 
 // EVENT LISTENERS
+
+// add a book
+
 document.getElementById('book-form').addEventListener('submit', (e) => {
   // form values
   const title = document.getElementById('title').value;
@@ -86,5 +89,12 @@ document.getElementById('book-form').addEventListener('submit', (e) => {
   // clear fields
   ui.clearFields();
 
+  e.preventDefault();
+})
+
+// delete a book
+
+document.getElementById('book-list').addEventListener('click', (e) => {
+  
   e.preventDefault();
 })
