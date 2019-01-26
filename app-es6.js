@@ -75,7 +75,15 @@ class Store {
   }
 
   static displayBooks() {
-
+    // retrieve any books that may be stored
+    const books = Store.getBooks();
+    // loop over books array
+    books.forEach((book) => {
+      // instatiate UI class (giving us access to its prototypes)
+      const ui = new UI;
+      // add new book to UI
+      ui.addBookToList(book)
+    });
   }
 
   static addBook(book) {
@@ -94,6 +102,10 @@ class Store {
 }
 
 // EVENT LISTENERS
+
+// display books in LS
+
+document.addEventListener('DOMContentLoaded', Store.displayBooks());
 
 // add a book
 
