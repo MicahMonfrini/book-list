@@ -60,24 +60,30 @@ class UI {
 class Store {
 
   static getBooks() {
+    // initialize variable
     let books;
+    // check to see if any books are stored
     if(localStorage.getItem('books') === null) {
+      // if not set to empty array
       books = [];
     } else {
+      // if books are present, retrieve them from LS
       books = JSON.parse(localStorage.getItem('books'));
     }
+    // return books in LS
     return books;
   }
-  
+
   static displayBooks() {
 
   }
 
   static addBook(book) {
+    // retrieve any books that may be stored
     const books = Store.getBooks();
-
+    // add new book to array
     books.push(book);
-
+    // update LS with new book
     localStorage.setItem('books', JSON.stringify(books));
   }
 
