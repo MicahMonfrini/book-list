@@ -8,8 +8,10 @@ function Book(title, author, isbn) {
   this.isbn = isbn;
 }
 
-// UI
+// ui
 function UI() {}
+
+// PROTOTYPES
 
 // add book prototype
 UI.prototype.addBookToList = (book) => {
@@ -30,7 +32,6 @@ UI.prototype.addBookToList = (book) => {
 }
 
 // delete book prototype
-
 UI.prototype.deleteBook = (target) => {
   if(target.className === 'delete') {
     target.parentElement.parentElement.remove();
